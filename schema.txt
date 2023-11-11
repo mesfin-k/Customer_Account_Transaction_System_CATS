@@ -1,0 +1,107 @@
+PRAGMA foreign_keys=ON;
+
+-- Drop tables in a safe sequence
+-- Note: Make sure to drop tables with foreign keys first
+DROP TABLE IF EXISTS Cards;
+DROP TABLE IF EXISTS AccountTransactions;
+DROP TABLE IF EXISTS CustomerAccounts;
+DROP TABLE IF EXISTS Transactions;
+DROP TABLE IF EXISTS Accounts;
+DROP TABLE IF EXISTS Customers;
+DROP TABLE IF EXISTS EmployeeRoles;
+DROP TABLE IF EXISTS Employees;
+DROP TABLE IF EXISTS Branches;
+DROP TABLE IF EXISTS Addresses;
+DROP TABLE IF EXISTS AccountTypes;
+
+CREATE TABLE Addresses (
+    AddressID INTEGER PRIMARY KEY,
+    Street TEXT NOT NULL,
+    City TEXT NOT NULL,
+    State TEXT,
+    Country TEXT NOT NULL,
+    PostalCode TEXT
+);
+CREATE TABLE Customers (
+    CustomerID INTEGER PRIMARY KEY,
+    FirstName TEXT NOT NULL,
+    LastName TEXT NOT NULL,
+    SSN TEXT UNIQUE NOT NULL,
+    AddressID INTEGER,
+    PhoneNumber TEXT,
+    Email TEXT UNIQUE,
+    FOREIGN KEY(AddressID) REFERENCES Addresses(AddressID)
+);
+CREATE TABLE Branches (
+    BranchID INTEGER PRIMARY KEY,
+    Name TEXT NOT NULL,
+    AddressID INTEGER NOT NULL,
+    PhoneNumber TEXT,
+    FOREIGN KEY(AddressID) REFERENCES Addresses(AddressID)
+);
+CREATE TABLE EmployeeRoles (
+    RoleID INTEGER PRIMARY KEY,
+    RoleName TEXT NOT NULL,
+    Description TEXT
+);
+CREATE TABLE Employees (
+    EmployeeID INTEGER PRIMARY KEY,
+    FirstName TEXT NOT NULL,
+    LastName TEXT NOT NULL,
+    Position TEXT NOT NULL,
+    BranchID INTEGER,
+    DateHired TEXT NOT NULL,
+    TerminationDate TEXT,
+    RoleID INTEGER, Role TEXT,
+    FOREIGN KEY(BranchID) REFERENCES Branches(BranchID),
+    FOREIGN KEY(RoleID) REFERENCES EmployeeRoles(RoleID)
+);
+CREATE TABLE Accounts (
+    AccountID INTEGER PRIMARY KEY,
+    CustomerID INTEGER,
+    AccountNumber TEXT UNIQUE NOT NULL,
+    Balance REAL DEFAULT 0,
+    AccountTypeID INTEGER NOT NULL,
+    DateOpened TEXT,
+    Status TEXT NOT NULL,
+    FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID),
+    FOREIGN KEY(AccountTypeID) REFERENCES AccountTypes(AccountTypeID)
+);
+CREATE TABLE Transactions (
+    TransactionID INTEGER PRIMARY KEY,
+    AccountID INTEGER,
+    Type TEXT NOT NULL,
+    Amount REAL NOT NULL,
+    Timestamp TEXT DEFAULT CURRENT_TIMESTAMP,
+    Description TEXT, BranchID INTEGER,
+    FOREIGN KEY(AccountID) REFERENCES Accounts(AccountID)
+);
+CREATE TABLE Cards (
+    CardID INTEGER PRIMARY KEY,
+    AccountID INTEGER,
+    CardNumber TEXT UNIQUE NOT NULL,
+    ExpiryDate TEXT NOT NULL,
+    Type TEXT NOT NULL,
+    Status TEXT NOT NULL,
+    FOREIGN KEY(AccountID) REFERENCES Accounts(AccountID)
+);
+CREATE TABLE CustomerAccounts (
+    CustomerID INTEGER,
+    AccountID INTEGER, BranchID INTEGER,
+    PRIMARY KEY (CustomerID, AccountID),
+    FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID),
+    FOREIGN KEY(AccountID) REFERENCES Accounts(AccountID)
+);
+CREATE TABLE AccountTransactions (
+    AccountID INTEGER,
+    TransactionID INTEGER,
+    PRIMARY KEY (AccountID, TransactionID),
+    FOREIGN KEY(AccountID) REFERENCES Accounts(AccountID),
+    FOREIGN KEY(TransactionID) REFERENCES Transactions(TransactionID)
+);
+CREATE TABLE AccountTypes (
+  AccountTypeID INTEGER PRIMARY KEY,
+  TypeName TEXT,
+  InterestRate REAL,
+  Overdraft TEXT
+);
