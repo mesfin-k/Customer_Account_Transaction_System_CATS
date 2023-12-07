@@ -1,0 +1,16 @@
+EmployeeName         BranchName           Role                 Street               City                
+John Doe             Main Branch          Manager              NULL                 NULL                
+Jane Smith           Main Branch          Teller               NULL                 NULL                
+Alice Johnson        East Branch          Teller               NULL                 NULL                
+Bob Brown            East Branch          Manager              NULL                 NULL                
+Carol Davis          West Branch          Teller               NULL                 NULL                
+Emily Taylor         West Branch          Manager              NULL                 NULL                
+David Clark          North Branch         Teller               NULL                 NULL                
+Olivia Allen         South Branch         Teller               NULL                 NULL                
+James Wilson         West Branch          Manager              NULL                 NULL                
+Sophia Martinez      North Branch         Teller               NULL                 NULL                
+Daniel Anderson      South Branch         Teller               NULL                 NULL                
+Isabella Thomas      West Branch          Manager              NULL                 NULL                
+Matthew Jackson      North Branch         Teller               NULL                 NULL                
+Ava White            South Branch         Teller               NULL                 NULL                
+Lucas Harris         West Branch          Manager              NULL                 NULL                

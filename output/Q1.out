@@ -1,0 +1,12 @@
+CustomerID           FirstName            LastName             AccountNumber        BranchName          
+1                    John                 Doe                  ACC1234              Main Branch         
+2                    Jane                 Smith                ACC5678              East Branch         
+3                    Alice                Johnson              ACC2345              Main Branch         
+4                    Bob                  Brown                ACC3456              East Branch         
+5                    Carol                Davis                ACC4567              Main Branch         
+6                    Oliver               Harris               ACC1111              East Branch         
+7                    Emma                 Clark                ACC2222              West Branch         
+8                    Liam                 Lewis                ACC3333              North Branch        
+9                    Mia                  Robinson             ACC4444              West Branch         
+10                   Noah                 Walker               ACC5555              North Branch        
+15                   Ella                 King                 ACC7890              West Branch         

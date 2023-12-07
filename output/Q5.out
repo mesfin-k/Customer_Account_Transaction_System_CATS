@@ -1,0 +1,18 @@
+DistrictName         TotalTransactions    TotalAmount          AccountTypesInvolved NumberOfBranches     NumberOfCustomers    NumberOfEmployees   
+North District       10                   7300.0               2                    1                    4                    2                   
+South District       12                   10000.0              2                    1                    4                    2                   
+Central District     4                    1500.0               1                    1                    2                    0                   
+Northwest District   0                    0                    0                    0                    0                    0                   
+Southeast District   0                    0                    0                    0                    0                    0                   
+Northeast District   0                    0                    0                    0                    0                    0                   
+Southwest District   0                    0                    0                    0                    0                    0                   
+Eastside District    0                    0                    0                    0                    0                    0                   
+Westside District    0                    0                    0                    0                    0                    0                   
+Uptown District      0                    0                    0                    0                    0                    0                   
+Downtown District    0                    0                    0                    0                    0                    0                   
+Midtown District     0                    0                    0                    0                    0                    0                   
+Riverside District   0                    0                    0                    0                    0                    0                   
+Lakeside District    0                    0                    0                    0                    0                    0                   
+Hilltop District     0                    0                    0                    0                    0                    0                   
+Valley District      0                    0                    0                    0                    0                    0                   
+Coastal District     0                    0                    0                    0                    0                    0                   

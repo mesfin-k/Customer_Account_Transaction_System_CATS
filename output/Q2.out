@@ -1,0 +1,12 @@
+CustomerID           FirstName            LastName             BranchName           AccountBalance       TotalTransactionsAmount NumberOfTransactions
+1                    John                 Doe                  Main Branch          1000.0               1450.0               3                   
+2                    Jane                 Smith                East Branch          500.0                3200.0               3                   
+3                    Alice                Johnson              Main Branch          1500.0               2150.0               2                   
+4                    Bob                  Brown                East Branch          2000.0               1100.0               1                   
+5                    Carol                Davis                Main Branch          2500.0               550.0                1                   
+6                    Oliver               Harris               East Branch          1800.0               1600.0               3                   
+7                    Emma                 Clark                West Branch          800.0                1300.0               2                   
+8                    Liam                 Lewis                North Branch         1500.0               1250.0               2                   
+9                    Mia                  Robinson             West Branch          2200.0               300.0                1                   
+10                   Noah                 Walker               North Branch         950.0                1900.0               2                   
+15                   Ella                 King                 West Branch          3500.0               NULL                 0                   
