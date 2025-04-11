@@ -1,4 +1,4 @@
-# CSE111
+# CATS Front and back end system
 
 A robust database system designed to manage customer accounts and financial transactions. 
 Seamlessly tracks account details, balances, and transaction histories, ensuring accurate 
